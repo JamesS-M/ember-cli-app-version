@@ -26,6 +26,11 @@ export function appVersion(_, hash = {}) {
     match = version.match(shaRegExp); // 4jds75hf
   }
 
+  if (majorModifier) {
+    const [_, major, minor, patch] = match[0].match(/(\d{1,2})\.(\d{1,2})\.(\d{1,2})/)
+    return `${parseInt(major) + parseInt(majorModifier)}.${minor}.${patch}`
+  }
+
   return match ? match[0] : version;
 }
 
