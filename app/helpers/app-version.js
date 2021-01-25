@@ -4,6 +4,7 @@ import { shaRegExp, versionRegExp, versionExtendedRegExp } from 'ember-cli-app-v
 
 export function appVersion(_, hash = {}) {
   const version = config.APP.version;
+  const majorModifier = config.app.versionFaker.major
   // e.g. 1.0.0-alpha.1+4jds75hf
 
   // Allow use of 'hideSha' and 'hideVersion' For backwards compatibility
